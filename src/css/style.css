@@ -1,0 +1,36 @@
+html{
+  height: 100%;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#footer{
+  margin-top: auto;
+}
+
+@keyframes popup{
+   from{
+     transform: scale(1);
+   }
+   to{
+     transform: scale(1.3);
+   }
+}
+
+.yearbox img{
+  width: 80px;
+  padding: 5px;
+  animation:popup 1.5s alternate infinite;
+}
+
+.wishing{
+  font-size: 40px;
+  padding: 10px;
+  color: #a1a1d7;
+  text-shadow: 2px 1px 2px red;
+  letter-spacing: 1px;
+}
