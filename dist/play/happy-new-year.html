@@ -1,0 +1,15 @@
+<!doctype html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><title>Cazual Gaming | Happy New Year</title><link href="../css/style.css" rel="stylesheet"><link href="../css/bootstrap.min.css" rel="stylesheet"><script src="../js/bootstrap.bundle.min.js"></script></head><body style="background: #d9daee9f;"><!-- Navigation Bar --><div id="nav"></div><main><h1 class="wishing text-center fst-italic text-capitalize"></h1><div class="w-75 mx-auto"><img src="../img/other/new-year.png" alt="Happy New Year" class="img-fluid"></div><div class="yearbox d-flex justify-content-center"><img src="../img/num/2.png" alt="2"> <img src="../img/num/0.png" alt="0"> <img src="../img/num/2.png" alt="2"> <img src="../img/num/4.png" alt="4"></div><form action="#" class="mt-5 p-2 d-flex" onsubmit="return share()"><input type="text" name="name" id="name" placeholder="Enter Your Name" class="form-control form-control-lg w-75" required> <button class="btn btn-outline-light w-25"><img src="../img/icon/whatsapp.png" alt="WhatsApp Share" class="img-fluid"></button></form></main><!-- Footer Bar --><div id="footer"></div><script src="../js/index.js"></script><script>// if param available then show name otherwise without name
+ if(params.get('n')){
+   document.querySelector(".wishing").innerHTML=`${params.get('n')} Wishing You`;
+ }else{
+   document.querySelector(".wishing").innerHTML="Wishing You";
+ }
+
+// share button
+function share(){
+  event.preventDefault();
+  let name = document.querySelector("#name").value;
+  let text=`${window.location.protocol}//${window.location.hostname}${window.location.pathname}?n=${name}`;
+
+  window.location.href = `https://api.whatsapp.com/send?text=${text}`;
+}</script></body></html>
