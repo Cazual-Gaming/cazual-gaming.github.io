@@ -26,9 +26,14 @@
    <img src="../img/num/4.png" alt="4">
  </div>
  
- <form action="#" class="mt-5 p-2 d-flex" onsubmit="return share()">
-   <input type="text" name="name" id="name" placeholder="Enter Your Name" class="form-control form-control-lg w-75" required>
-   <button class="btn btn-outline-light w-25"><img src="../img/icon/whatsapp.png" alt="WhatsApp Share" class="img-fluid"></button>
+ <form action="#" class="mt-5 p-2" onsubmit="return false">
+   <input type="text" name="name" id="name" placeholder="Enter Your Name" class="form-control form-control-lg w-75 mx-auto" required>
+   <div class="sm-box d-flex m-2">
+     <button class="btn btn-outline-light w-25" onclick="share('w')"><img src="../img/icon/whatsapp.png" alt="WhatsApp" class="img-fluid"></button>
+     <button class="btn btn-outline-light w-25" onclick="share('f')"><img src="../img/icon/facebook.png" alt="Facebook" class="img-fluid"></button>
+     <button class="btn btn-outline-light w-25" onclick="share('t')"><img src="../img/icon/telegram.png" alt="Telegram" class="img-fluid"></button>
+     <button class="btn btn-outline-light w-25" onclick="share('x')"><img src="../img/icon/twitter.png" alt="X (Twitter)" class="img-fluid"></button>
+   </div>
  </form>
  
 </main>
@@ -46,12 +51,24 @@
  }
 
 // share button
-function share(){
+function share(sm){
   event.preventDefault();
   let name = document.querySelector("#name").value;
   let text=`${window.location.protocol}//${window.location.hostname}${window.location.pathname}?n=${name}`;
-
-  window.location.href = `https://api.whatsapp.com/send?text=${text}`;
+  
+  if(!name){
+     document.querySelector("#name").focus();
+     return false;
+  }else{
+   if(sm=="w"){
+      window.location.href = `https://api.whatsapp.com/send?text=${text}`;
+    }else if(sm=="f"){
+      window.location.href = `https://www.facebook.com/sharer/sharer.php?u=${text}`;
+    }else if(sm=="t"){
+      window.location.href = `https://t.me/share/url?text=${text}`;
+    }else if(sm=="x"){
+      window.location.href = `https://twitter.com/intent/tweet?text=${text}`; }
+   }
 }
 </script>
 </body>
