@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "gulp",
-    "build": "rm -rf dist && gulp build"
+    "dev": "gulp",
+    "build": "gulp build",
+    "prod": "rm -rf src template.txt"
   },
-  "keywords": [],
-  "author": "",
+  "author": "Suyash Das",
   "license": "ISC",
   "devDependencies": {
     "bootstrap": "^5.3.2",
