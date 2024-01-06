@@ -12,10 +12,10 @@ document.querySelector("#nav").innerHTML= `<nav class="navbar navbar-expand-lg b
           <a class="nav-link" aria-current="page" href="/">Home</a>
         </li>
         <li class="nav-item p-1">
-          <a class="nav-link" href="/pages/policies/privacy.html">Privacy Policy</a>
+          <a class="nav-link" href="/pages/policies/privacy">Privacy Policy</a>
         </li>
         <li class="nav-item p-1">
-          <a class="nav-link" href="/pages/policies/terms.html">Terms &amp; Conditions</a>
+          <a class="nav-link" href="/pages/policies/terms">Terms &amp; Conditions</a>
         </li>
       </ul>
     </div>
