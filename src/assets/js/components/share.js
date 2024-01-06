@@ -8,7 +8,7 @@ const params = new URLSearchParams(queryString);
 
 // if param available then show name otherwise without name
  if(params.get('n')){
-   document.querySelector(".wishing").innerHTML=`${params.get('n')} Wishing You`;
+   document.querySelector(".wishing").innerHTML=`${params.get('n').replace("-", " ")} Wishing You`;
  }else{
    document.querySelector(".wishing").innerHTML="Wishing You";
  }
@@ -16,7 +16,7 @@ const params = new URLSearchParams(queryString);
 // share button
 function share(sm){
   event.preventDefault();
-  let name = document.querySelector("#name").value;
+  let name = document.querySelector("#name").value.replace(" ","-"); // get name from input and replace whitespace with hyphen
   let text= encodeURIComponent(`${window.location.protocol}//${window.location.hostname}${window.location.pathname}?n=${name}`);
   
   if(!name){
