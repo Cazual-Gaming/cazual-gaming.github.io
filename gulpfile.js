@@ -33,7 +33,7 @@ async function css(){
 }
 
 async function js(){
-   gulp.src('src/assets/js/*.js')
+   gulp.src('src/assets/js/**/*.js')
      .pipe(gulp.dest('assets/js'));
 }
 
