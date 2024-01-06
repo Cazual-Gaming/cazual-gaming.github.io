@@ -23,23 +23,23 @@ async function server(){
 async function html(){
    gulp.src("src/**/*.html")
       .pipe(minHTML({ collapseWhitespace: true }))
-      .pipe(gulp.dest("dist"));
+      .pipe(gulp.dest("./"));
 }
 
 async function css(){
    gulp.src('src/css/*.css')
      .pipe(cleanCSS({compatibility: 'ie8'}))
-     .pipe(gulp.dest('dist/css'));
+     .pipe(gulp.dest('assets/css'));
 }
 
 async function js(){
    gulp.src('src/js/*.js')
-     .pipe(gulp.dest('dist/js'));
+     .pipe(gulp.dest('assets/js'));
 }
 
 async function img(){
 	gulp.src('src/img/**/*')
-	  .pipe(gulp.dest('dist/img'));
+	  .pipe(gulp.dest('assets/img'));
 }
 
 exports.default = server;
