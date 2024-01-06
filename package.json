@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "gulp",
     "build": "gulp build",
-    "rmbuild": "rm -rf pages assets index.html sitemap.xml",
+    "rmbuild": "rm -rf pages assets index.html sitemap.xml robots.txt",
     "prod": "rm -rf src template.txt"
   },
   "author": "Suyash Das",
@@ -17,8 +17,7 @@
     "gulp-clean": "^0.4.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-htmlmin": "^5.0.1",
-    "gulp-imagemin": "7.1.0",
-    "gulp-uglyfly": "^1.4.2",
+    "gulp-minify": "^3.0.0",
     "gulp-webserver": "^0.9.1"
   }
 }
