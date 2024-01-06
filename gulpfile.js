@@ -27,18 +27,18 @@ async function html(){
 }
 
 async function css(){
-   gulp.src('src/css/*.css')
+   gulp.src('src/assets/css/*.css')
      .pipe(cleanCSS({compatibility: 'ie8'}))
      .pipe(gulp.dest('assets/css'));
 }
 
 async function js(){
-   gulp.src('src/js/*.js')
+   gulp.src('src/assets/js/*.js')
      .pipe(gulp.dest('assets/js'));
 }
 
 async function img(){
-	gulp.src('src/img/**/*')
+	gulp.src('src/assets/img/**/*')
 	  .pipe(gulp.dest('assets/img'));
 }
 
