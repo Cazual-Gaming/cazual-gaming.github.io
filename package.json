@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "gulp",
-    "build": "rm -rf assets pages index.html && gulp build",
+    "build": "gulp build",
+    "rmbuild": "rm -rf pages assets index.html sitemap.xml",
     "prod": "rm -rf src template.txt"
   },
   "author": "Suyash Das",
