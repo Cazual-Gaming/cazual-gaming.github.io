@@ -2,11 +2,9 @@ const gulp = require('gulp');
 const webserver = require('gulp-webserver');
 const minHTML = require('gulp-htmlmin');
 const cleanCSS = require('gulp-clean-css');
-// const uglyfly = require('gulp-uglyfly');
+// const minify = require('gulp-minify');
 const clean = require('gulp-clean');
 // const imagemin = require('gulp-imagemin');
-
-
  
 async function clear(){
    gulp.src('dist', {read: false}).pipe(clean());
@@ -22,7 +20,7 @@ async function server(){
 
 async function html(){
    gulp.src("src/**/*.html")
-      .pipe(minHTML({ collapseWhitespace: true }))
+      .pipe(minHTML({ collapseWhitespace: true, removeComments: true }))
       .pipe(gulp.dest("./"));
 }
 
@@ -42,11 +40,11 @@ async function img(){
 	  .pipe(gulp.dest('assets/img'));
 }
 
-async function sitemap(){
-	  gulp.src("src/sitemap.xml")
+async function other(){
+	  gulp.src(["src/sitemap.xml","src/robots.txt"])
       .pipe(gulp.dest("./"));
 }
 
 exports.default = server;
-exports.build = gulp.parallel(html, css, js, img, sitemap);
+exports.build = gulp.parallel(html, css, js, img, other);
 // exports.build = gulp.series(clear, gulp.parallel(html, css, js, img));
