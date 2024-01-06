@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "gulp",
     "build": "gulp build",
+    "rmbuild": "rm -rf pages assets index.html sitemap.xml",
     "prod": "rm -rf src template.txt"
   },
   "author": "Suyash Das",

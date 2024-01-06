@@ -42,6 +42,11 @@ async function img(){
 	  .pipe(gulp.dest('assets/img'));
 }
 
+async function sitemap(){
+	  gulp.src("src/sitemap.xml")
+      .pipe(gulp.dest("./"));
+}
+
 exports.default = server;
-exports.build = gulp.parallel(html, css, js, img);
+exports.build = gulp.parallel(html, css, js, img, sitemap);
 // exports.build = gulp.series(clear, gulp.parallel(html, css, js, img));

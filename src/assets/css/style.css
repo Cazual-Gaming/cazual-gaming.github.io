@@ -24,6 +24,9 @@ body{
 .yearbox img{
   width: 80px;
   padding: 5px;
+}
+
+.popup{
   animation:popup 1.5s alternate infinite;
 }
 
