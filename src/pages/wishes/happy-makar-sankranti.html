@@ -16,8 +16,8 @@
 <main>
 
 <h1 class="wishing text-center fst-italic text-capitalize"></h1>
-<div class="w-75 mx-auto">
-  <img src="/assets/img/other/makar-sankranti.png" alt="Happy Makar Sankranti" class="img-fluid popup" />
+<div src="" class="w-75 mx-auto my-5">
+  <img alt="Happy Makar Sankranti" id="randomImage" class="img-fluid popup"/>
 </div>
 
 <!-- Share Box  -->
@@ -29,5 +29,13 @@
 <div id="footer"></div>
 <script src="/assets/js/index.js" type="module"></script>
 <script src="/assets/js/components/share.js"></script>
+<script src="/assets/js/components/randomImage.js"></script>
+<script>
+randomImage([
+    '/assets/img/other/makar-sankranti-0.png',
+    '/assets/img/other/makar-sankranti-1.png',
+    '/assets/img/other/makar-sankranti-2.png',
+    '/assets/img/other/makar-sankranti-3.png'], "randomImage");
+</script>
 </body>
 </html>
