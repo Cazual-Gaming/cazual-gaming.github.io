@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Chalo Ayodhya | Cazual Gaming</title>
+  <meta property="og:image" content="https://cazualgaming.com/assets/img/other/ram-mandir.jpeg">
+  <link href="/assets/css/style.css" rel="stylesheet">
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+  <script src="/assets/js/bootstrap.bundle.min.js" ></script>
+  <style>
+    .image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -50;
+    }
+    
+    #hbox{
+      margin-top: 60%;
+      padding: 10px;
+    }
+    #ca, #countdown{
+      color: #FF7722;
+      font-size: 30px;
+      font-weight: bolder;
+      text-shadow: 2px 0 2px white;
+    }
+  </style>
+</head>
+<body>
+<!-- Navigation Bar -->
+<div id="nav"></div>
+  
+<main>
+
+<div id="hbox">
+  <h1 id="ca">चलो अयोध्या</h1>
+  <div id="countdown"></div>
+</div>
+
+<div>
+  <img src="/assets/img/other/ram-mandir.jpeg" alt="Ram Mandir" class="image" style="opacity: 0.3;" />
+   <img src="/assets/img/other/sri-ram.jpeg" alt="Ram Mandir" class="image" style="opacity: 0.6;"/>
+</div>
+
+ 
+<!-- Share Box  -->
+ <div id="share"></div>
+ 
+</main>
+  
+<!-- Footer Bar -->
+<div id="footer"></div>
+<script src="/assets/js/index.js" type="module"></script>
+<script>
+const targetDate = new Date(2024, 0, 22, 0, 0, 0); // Modify this to your target date and time
+
+function updateCountdown() {
+  const now = new Date();
+  const difference = targetDate.getTime() - now.getTime();
+
+  const seconds = Math.floor(difference / 1000) % 60;
+  const minutes = Math.floor(difference / (1000 * 60)) % 60;
+  const hours = Math.floor(difference / (1000 * 60 * 60));
+
+  // Format and display the countdown
+  const countdownElement = document.getElementById("countdown");
+  countdownElement.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+
+  // Schedule another update
+  setTimeout(updateCountdown, 1000);
+}
+
+updateCountdown();
+
+</script>
+</body>
+</html>
